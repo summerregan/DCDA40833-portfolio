@@ -7,8 +7,8 @@
    CSS Variables (Color Scheme)
    ========================= */
 :root {
-    --primary-color: hsla(223, 85%, 33%, 0.835);      /* Deeo Blue */
-    --secondary-color: #7da8fed5;    /* Light Blue */
+    --primary-color: hsla(116, 79%, 23%, 0.835);      /* Spring Green */
+    --secondary-color: #129a27d5;    /* Lighter Spring Green */
     --accent-color: #ffd700;       /* Gold accent */
     --text-color: #333;            /* Dark gray for text */
     --text-secondary: #64748b;     /* Lighter gray for captions */
