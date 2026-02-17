@@ -482,12 +482,16 @@ footer a:hover {
         align-items: stretch;
         gap: 0.5rem;
         margin-top: 0.75rem;
+        background-color: var(--primary-color);
+        padding: 0.5rem;
+        border-radius: 8px;
     }
 
     .site-nav .nav-menu a {
         display: block;
         width: 100%;
         text-align: center;
+        background-color: var(--primary-color);
     }
 
     .site-nav.is-open {
