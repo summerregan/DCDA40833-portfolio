@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&display=swap');
+
 /* =========================
    DCDA 40833 Skills Portfolio Template
    CSS Stylesheet for Student Portfolios
@@ -7,22 +9,23 @@
    CSS Variables (Color Scheme)
    ========================= */
 :root {
-    --primary-color: #fec5bb;      /* peach pink */
-    --secondary-color: #fcd5ce;    /* blush */
-    --accent-color: #fae1dd;       /* rose cream */
-    --bg-color: #f8edeb;           /* powder pink */
-    --highlight-color: #fae1dd;    /* hover/highlight */
-    --soft-accent: #fcd5ce;        /* soft accent */
-    --nav-color: #fec5bb;          /* navigation */
-    --text-color: #5c4743;         /* warm dark text */
-    --text-secondary: #7a615d;     /* secondary text */
+    --primary-color: #c5e6ff;      /* requested primary */
+    --secondary-color: #e8f4ff;    /* pale blue */
+    --accent-color: #8ec5f5;       /* medium accent blue */
+    --heading-color: #0f3d66;      /* dark blue headings */
+    --bg-color: #f7fbff;           /* page background */
+    --highlight-color: #dff1ff;    /* hover/highlight */
+    --soft-accent: #edf7ff;        /* soft accent */
+    --nav-color: #c5e6ff;          /* navigation */
+    --text-color: #000000;         /* black body text */
+    --text-secondary: #1f2937;     /* dark neutral secondary text */
     --surface-color: #ffffff;      /* card/section background */
-    --border-color: #fcd5ce;       /* borders and dividers */
-    --muted-bg: #fff7f5;           /* subtle alternating background */
-    --footer-bg: #fec5bb;          /* footer */
-    --code-inline-bg: #f8edeb;     /* inline code background */
-    --code-inline-color: #5c4743;  /* inline code text */
-    --code-title-color: #fae1dd;   /* code title accent */
+    --border-color: #cfe6fb;       /* borders and dividers */
+    --muted-bg: #f3f9ff;           /* subtle alternating background */
+    --footer-bg: #111827;          /* near-black footer */
+    --code-inline-bg: #edf6ff;     /* inline code background */
+    --code-inline-color: #0f3d66;  /* inline code text */
+    --code-title-color: #c5e6ff;   /* code title accent */
     --white: #ffffff;
 }
 
@@ -40,7 +43,7 @@ html {
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Abhaya Libre', Georgia, 'Times New Roman', serif;
     line-height: 1.6;
     color: var(--text-color);
     background: linear-gradient(180deg, var(--bg-color), var(--secondary-color));
@@ -55,7 +58,7 @@ header {
     color: var(--text-color);
     padding: 2rem 0;
     text-align: center;
-    box-shadow: 0 8px 24px rgba(92, 71, 67, 0.12);
+    box-shadow: 0 8px 24px rgba(17, 24, 39, 0.1);
 }
 
 header h1 {
@@ -79,7 +82,7 @@ nav {
     position: sticky;           /* Stick to top when scrolling */
     top: 0;
     z-index: 100;
-    box-shadow: 0 6px 18px rgba(92, 71, 67, 0.12);
+    box-shadow: 0 6px 18px rgba(17, 24, 39, 0.1);
 }
 
 /* Style the navigation list */
@@ -128,12 +131,12 @@ main section {
     margin-bottom: 2rem;       /* Space between sections */
     border: 1px solid var(--border-color);
     border-radius: 14px;       /* Rounded corners */
-    box-shadow: 0 12px 32px rgba(92, 71, 67, 0.08);
+    box-shadow: 0 12px 32px rgba(17, 24, 39, 0.08);
 }
 
 /* Style h2 headings inside sections */
 main section h2 {
-    color: var(--primary-color);
+    color: var(--heading-color);
     border-bottom: 3px solid var(--soft-accent);
     padding-bottom: 0.5rem;
     margin-bottom: 1rem;
@@ -141,7 +144,7 @@ main section h2 {
 }
 
 main section h3 {
-    color: var(--text-color);
+    color: var(--heading-color);
     margin-top: 1.5rem;
     margin-bottom: 0.75rem;
     font-size: 1.5rem;
@@ -174,7 +177,7 @@ main img {
     background: var(--surface-color);
     border: 1px solid var(--border-color);
     border-radius: 12px;
-    box-shadow: 0 10px 22px rgba(92, 71, 67, 0.12);
+    box-shadow: 0 10px 22px rgba(17, 24, 39, 0.1);
 }
 
 figure {
@@ -277,8 +280,8 @@ th, td {
 }
 
 th {
-    background: var(--primary-color);
-    color: white;
+    background: var(--heading-color);
+    color: var(--white);
     font-weight: 600;
 }
 
@@ -324,7 +327,7 @@ tr:nth-child(even) {
 }
 
 .framework-callout strong {
-    color: var(--secondary-color);
+    color: var(--heading-color);
 }
 
 /* =========================
@@ -352,14 +355,14 @@ tr:nth-child(even) {
 }
 
 .portfolio-card:hover {
-    border-color: var(--primary-color);
+    border-color: var(--accent-color);
     background: linear-gradient(180deg, var(--surface-color), var(--soft-accent));
-    box-shadow: 0 14px 28px rgba(92, 71, 67, 0.12);
+    box-shadow: 0 14px 28px rgba(17, 24, 39, 0.1);
     transform: translateY(-3px);
 }
 
 .portfolio-card h3 {
-    color: var(--primary-color);
+    color: var(--heading-color);
     margin: 0 0 0.5rem 0;
     font-size: 1.25rem;
 }
@@ -374,8 +377,8 @@ tr:nth-child(even) {
 /* Lab tag badge on portfolio cards */
 .lab-tag {
     display: inline-block;
-    background: var(--primary-color);
-    color: var(--text-color);
+    background: var(--heading-color);
+    color: var(--white);
     font-size: 0.75rem;
     font-weight: 600;
     padding: 0.25rem 0.5rem;
@@ -389,14 +392,14 @@ tr:nth-child(even) {
    ========================= */
 footer {
     background-color: var(--footer-bg);
-    color: var(--text-color);
+    color: var(--primary-color);
     text-align: center;
     padding: 1.5rem;
     margin-top: 2rem;
 }
 
 footer a {
-    color: var(--highlight-color);
+    color: var(--primary-color);
     text-decoration: none;
 }
 
