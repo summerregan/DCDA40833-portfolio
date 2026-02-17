@@ -7,12 +7,22 @@
    CSS Variables (Color Scheme)
    ========================= */
 :root {
-    --primary-color: hsla(116, 79%, 23%, 0.835);      /* Spring Green */
-    --secondary-color: #babd8d;    /* Lighter Spring Green */
-    --accent-color: #ffdac6;       /* Gold accent */
-    --text-color: #333;            /* Dark gray for text */
-    --text-secondary: #64748b;     /* Lighter gray for captions */
-    --bg-color: #f4f4f4;           /* Light background */
+    --primary-color: #fec5bb;      /* peach pink */
+    --secondary-color: #fcd5ce;    /* blush */
+    --accent-color: #fae1dd;       /* rose cream */
+    --bg-color: #f8edeb;           /* powder pink */
+    --highlight-color: #fae1dd;    /* hover/highlight */
+    --soft-accent: #fcd5ce;        /* soft accent */
+    --nav-color: #fec5bb;          /* navigation */
+    --text-color: #5c4743;         /* warm dark text */
+    --text-secondary: #7a615d;     /* secondary text */
+    --surface-color: #ffffff;      /* card/section background */
+    --border-color: #fcd5ce;       /* borders and dividers */
+    --muted-bg: #fff7f5;           /* subtle alternating background */
+    --footer-bg: #fec5bb;          /* footer */
+    --code-inline-bg: #f8edeb;     /* inline code background */
+    --code-inline-color: #5c4743;  /* inline code text */
+    --code-title-color: #fae1dd;   /* code title accent */
     --white: #ffffff;
 }
 
@@ -33,7 +43,7 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
     color: var(--text-color);
-    background-color: var(--bg-color);
+    background: linear-gradient(180deg, var(--bg-color), var(--secondary-color));
 }
 
 /* =========================
@@ -41,34 +51,35 @@ body {
    ========================= */
 /* Style semantic tags directly - no classes needed! */
 header {
-    background-color: var(--primary-color);
-    color: white;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--text-color);
     padding: 2rem 0;
     text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 24px rgba(92, 71, 67, 0.12);
 }
 
 header h1 {
-    color: white;
+    color: var(--text-color);
     margin: 0 0 0.5rem 0;
     font-size: 2rem;
 }
 
 header p {
+    color: var(--text-color);
     margin: 0;
     opacity: 0.9;
     font-size: 1.1rem;
 }
 
 nav {
-    background-color: #3d1461;
+    background-color: var(--nav-color);
     padding: 0.75rem;
     display: flex;              /* Make nav a flex container */
     justify-content: center;    /* Center the ul inside nav */
     position: sticky;           /* Stick to top when scrolling */
     top: 0;
     z-index: 100;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 18px rgba(92, 71, 67, 0.12);
 }
 
 /* Style the navigation list */
@@ -88,15 +99,16 @@ nav li {
 }
 
 nav a {
-    color: white;
+    color: var(--text-color);
     text-decoration: none;
     padding: 0.5rem 1rem;
-    transition: background-color 0.3s ease;
-    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 999px;
 }
 
 nav a:hover {
-    background-color: var(--primary-color);
+    background-color: var(--highlight-color);
+    color: var(--text-color);
 }
 
 /* =========================
@@ -111,17 +123,18 @@ main {
 
 /* All sections inside main get consistent styling */
 main section {
-    background-color: white;
+    background-color: var(--surface-color);
     padding: 2rem;
     margin-bottom: 2rem;       /* Space between sections */
-    border-radius: 8px;        /* Rounded corners */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;       /* Rounded corners */
+    box-shadow: 0 12px 32px rgba(92, 71, 67, 0.08);
 }
 
 /* Style h2 headings inside sections */
 main section h2 {
     color: var(--primary-color);
-    border-bottom: 3px solid var(--secondary-color);
+    border-bottom: 3px solid var(--soft-accent);
     padding-bottom: 0.5rem;
     margin-bottom: 1rem;
     font-size: 1.875rem;
@@ -149,6 +162,24 @@ main section ol {
 
 main section li {
     margin-bottom: 0.5rem;
+}
+
+/* Consistent framed style for portfolio images */
+main img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0.75rem auto;
+    padding: 0.35rem;
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: 0 10px 22px rgba(92, 71, 67, 0.12);
+}
+
+figure {
+    margin: 1.5rem auto;
+    text-align: center;
 }
 
 /* =========================
@@ -206,8 +237,8 @@ code {
 
 /* Inline code (inside paragraphs) */
 p code, li code {
-    background: #f4f4f4;
-    color: #c7254e;
+    background: var(--code-inline-bg);
+    color: var(--code-inline-color);
     padding: 0.2rem 0.4rem;
     border-radius: 3px;
     font-size: 0.9em;
@@ -216,7 +247,7 @@ p code, li code {
 /* Code block titles */
 .code-title {
     background: #1e1e1e;
-    color: #9cdcfe;
+    color: var(--code-title-color);
     padding: 0.5rem 1rem;
     border-radius: 8px 8px 0 0;
     font-family: monospace;
@@ -236,13 +267,13 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin: 1.5rem 0;
-    background: white;
+    background: var(--surface-color);
 }
 
 th, td {
     padding: 0.75rem 1rem;
     text-align: left;
-    border: 1px solid #e2e8f0;
+    border: 1px solid var(--border-color);
 }
 
 th {
@@ -252,7 +283,7 @@ th {
 }
 
 tr:nth-child(even) {
-    background: #f8f9fa;
+    background: var(--muted-bg);
 }
 
 .results-table {
@@ -272,7 +303,7 @@ tr:nth-child(even) {
 
 /* Highlight key rows */
 .results-table tr.highlight {
-    background: #fff3cd;
+    background: var(--accent-color);
     font-weight: bold;
 }
 
@@ -280,7 +311,7 @@ tr:nth-child(even) {
    Framework Connections
    ========================= */
 .framework-callout {
-    background: linear-gradient(135deg, #f0e7f8, #e9d5ff);
+    background: linear-gradient(135deg, var(--soft-accent), var(--accent-color));
     border-left: 5px solid var(--secondary-color);
     border-radius: 8px;
     padding: 1.5rem;
@@ -310,8 +341,8 @@ tr:nth-child(even) {
 /* Individual portfolio card styling */
 .portfolio-card {
     display: block;
-    background: white;
-    border: 2px solid #e2e8f0;
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
     border-radius: 12px;
     padding: 1.5rem;
     text-decoration: none;
@@ -322,8 +353,9 @@ tr:nth-child(even) {
 
 .portfolio-card:hover {
     border-color: var(--primary-color);
-    box-shadow: 0 8px 16px rgba(77, 25, 121, 0.15);
-    transform: translateY(-4px);
+    background: linear-gradient(180deg, var(--surface-color), var(--soft-accent));
+    box-shadow: 0 14px 28px rgba(92, 71, 67, 0.12);
+    transform: translateY(-3px);
 }
 
 .portfolio-card h3 {
@@ -342,8 +374,8 @@ tr:nth-child(even) {
 /* Lab tag badge on portfolio cards */
 .lab-tag {
     display: inline-block;
-    background: var(--secondary-color);
-    color: white;
+    background: var(--primary-color);
+    color: var(--text-color);
     font-size: 0.75rem;
     font-weight: 600;
     padding: 0.25rem 0.5rem;
@@ -356,15 +388,15 @@ tr:nth-child(even) {
    Footer (semantic tag)
    ========================= */
 footer {
-    background-color: #333;
-    color: white;
+    background-color: var(--footer-bg);
+    color: var(--text-color);
     text-align: center;
     padding: 1.5rem;
     margin-top: 2rem;
 }
 
 footer a {
-    color: var(--accent-color);
+    color: var(--highlight-color);
     text-decoration: none;
 }
 
@@ -448,7 +480,7 @@ footer a:hover {
     display: block;
     width: 24px;
     height: 3px;
-    background: var(--white);
+    background: var(--text-color);
     margin: 5px 0;
     border-radius: 2px;
     transition: transform 0.2s ease, opacity 0.2s ease;
@@ -482,7 +514,7 @@ footer a:hover {
         align-items: stretch;
         gap: 0.5rem;
         margin-top: 0.75rem;
-        background-color: var(--primary-color);
+        background-color: var(--nav-color);
         padding: 0.5rem;
         border-radius: 8px;
     }
@@ -491,7 +523,7 @@ footer a:hover {
         display: block;
         width: 100%;
         text-align: center;
-        background-color: var(--primary-color);
+        background-color: var(--nav-color);
     }
 
     .site-nav.is-open {
