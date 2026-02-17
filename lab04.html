@@ -9,11 +9,19 @@
 
   <body>
     <header>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="lab02.html">Lab 2: AI Evaluation</a>
-        <a href="lab03.html">Lab 3: Visualization Critique</a>
-        <a href="lab04.html" class="active"> Lab 4:Tableau Visualization</a>
+      <nav class="site-nav">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-menu">
+          <span class="sr-only">Toggle navigation</span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul id="primary-menu" class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="lab02.html">Lab 2: AI Evaluation</a></li>
+          <li><a href="lab03.html">Lab 3: Visualization Critique</a></li>
+          <li><a href="lab04.html" class="active">Lab 4: Tableau Visualization</a></li>
+        </ul>
       </nav>
       <h1>Data Visualization in Tableau Public</h1>
     </header>
@@ -118,5 +126,11 @@
     data structure shapes storytelling, and I genuinely had fun exploring it.
   </p>
 </section>
+    </main>
 
-        
+    <footer>
+      <p>© 2026 Summer Regan</p>
+    </footer>
+    <script src="js/nav.js"></script>
+  </body>
+</html>

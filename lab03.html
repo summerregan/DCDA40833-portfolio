@@ -10,12 +10,20 @@
     <body>
 
         <header>
-            <nav>
-                <a href="index.html">Home</a>
-                <a href="lab02.html">Lab 2: AI Evaluation</a>
-                <a href="lab03.html">Lab 3: Visualization Critique</a>
+            <nav class="site-nav">
+                <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-menu">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul id="primary-menu" class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="lab02.html">Lab 2: AI Evaluation</a></li>
+                    <li><a href="lab03.html">Lab 3: Viz Critique</a></li>
+                </ul>
             </nav>
-            <h1>Visualization Critique</h1>
+            <h1>Viz Critique</h1>
         </header>
         <main>
 
@@ -96,6 +104,7 @@
         <footer>
             <p>© 2026 Summer Regan</p>
         </footer>
+        <script src="js/nav.js"></script>
 
     </body>
 </html>

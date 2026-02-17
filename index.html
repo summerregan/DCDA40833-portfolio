@@ -10,14 +10,20 @@
 </head>
 <body>
     <!-- Navigation: Links to all portfolio pages -->
-    <nav>
-        <ul>
+    <nav class="site-nav">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-menu">
+            <span class="sr-only">Toggle navigation</span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul id="primary-menu" class="nav-menu">
             <li><a href="index.html">Home</a></li>
             <li><a href="lab02.html">AI Evaluation</a></li>
-            <nav><a href="lab03.html">Visualization Critique</a></nav>
-            <li><a href="tableau-visualization.html">Tableau Viz</a></li>
-            <li><a href="lab5.html">Lab 5</a></li>
-            <li><a href="hometown-map.html">Hometown Map</a></li>
+            <li><a href="lab03.html">Viz Critique</a></li>
+            <li><a href="tableau-viz.html">Tableau Viz</a></li>
+            <li><a href="lab04.html">Lab 4</a></li>
+            <li><a href="sandbox.html">Sandbox</a></li>
         </ul>
     </nav>
 
@@ -51,7 +57,7 @@
             <!-- I added a headshot to make the portfolio feel more personal and help visitors connect a face to the name.
             -->
 
-            <img src="images/headshot.jpeg" alt="Headshot of person" width="50%">
+            <img src="images/headshot.jpeg" alt="Headshot of Summer Regan" class="headshot">
         </section>
 
         <!-- Portfolio Section: Links to all lab pages -->
@@ -116,5 +122,6 @@
         <p><a href="https://github.com/yourusername/your-repo-name">View Repository on GitHub</a></p>
         <p>&copy; 2026 Your Name | DCDA 40833 | TCU</p>
     </footer>
+    <script src="js/nav.js"></script>
 </body>
 </html>
