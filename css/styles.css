@@ -626,3 +626,27 @@ footer a:hover {
         transform: translateY(-8px) rotate(-45deg);
     }
 }
+
+/* =========================
+   Dark Mode Toggle Button
+   ========================= */
+.theme-toggle {
+    background-color: #000080;  /* Navy blue */
+    color: #87ceeb;             /* Light blue text */
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background-color: #00004d;  /* Darker navy on hover */
+    color: #b0e0e6;             /* Slightly brighter light blue on hover */
+}
+
+.theme-toggle:active {
+    transform: scale(0.98);
+}
