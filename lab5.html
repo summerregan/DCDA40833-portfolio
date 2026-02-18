@@ -66,7 +66,7 @@
             </ul>
 
             <figure>
-                <img src="images/dark-mode-button.jpeg" alt="Dark mode toggle button in the navigation bar">
+                <img src="images/dark-mode-button.png" alt="Dark mode toggle button in the navigation bar">
                 <figcaption>The dark mode toggle button in the nav</figcaption>
             </figure>
 
@@ -92,7 +92,7 @@ localStorage.setItem("site-theme", isDark ? "dark" : "light");
             </code></pre>
 
             <figure>
-                <img src="images/dark-mode-on.jpeg" alt="Dark mode toggle button activated in the navigation bar">
+                <img src="images/dark-mode-on.png" alt="Dark mode toggle button activated in the navigation bar">
                 <figcaption>Dark mode toggle button in action</figcaption>
             </figure>
 
@@ -140,8 +140,16 @@ localStorage.setItem("site-theme", isDark ? "dark" : "light");
 
             <h3>The Fix</h3>
 
+            <p>
+                I had the script linked with the wrong path, so the page failed to load correctly in preview.
+                I fixed it by pointing to the correct file and keeping the script at the end of the body.
+            </p>
+
             <pre><code>
-&lt;!-- Correct script path placed before closing body tag --&gt;
+&lt;!-- Wrong --&gt;
+&lt;script src="theme.js"&gt;&lt;/script&gt;
+
+&lt;!-- Correct --&gt;
 &lt;script src="js/theme.js"&gt;&lt;/script&gt;
             </code></pre>
 
