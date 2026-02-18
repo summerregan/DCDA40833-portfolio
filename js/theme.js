@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (themeToggle) {
       themeToggle.setAttribute('aria-pressed', String(isDark));
-      themeToggle.textContent = isDark ? 'Vibe Coding: On' : 'Vibe Coding';
+      themeToggle.textContent = isDark ? 'Dark Mode: On' : 'Dark Mode';
     }
   };
 
