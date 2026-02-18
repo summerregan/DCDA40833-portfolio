@@ -631,15 +631,10 @@ footer a:hover {
    Dark Mode Toggle Button
    ========================= */
 .theme-toggle {
-    background-color: #000080;  /* Navy blue */
-    color: #87ceeb;             /* Light blue text */
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 0.95rem;
+    background-color: #0f3d66;
+    color: #c5e6ff;
     font-family: inherit;
-    transition: all 0.3s ease;
+    font-size: inherit;
 }
 
 .theme-toggle:hover {
