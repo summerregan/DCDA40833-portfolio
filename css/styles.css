@@ -630,11 +630,41 @@ footer a:hover {
 /* =========================
    Dark Mode Toggle Button
    ========================= */
+/* Applied when the Vibe Coding toggle is active */
+body.dark {
+    --primary-color: #1b2636;
+    --secondary-color: #111827;
+    --accent-color: #3b82f6;
+    --heading-color: #dbeafe;
+    --bg-color: #0b1220;
+    --highlight-color: #243447;
+    --soft-accent: #1f2a3c;
+    --nav-color: #111827;
+    --text-color: #e5e7eb;
+    --text-secondary: #cbd5e1;
+    --surface-color: #162132;
+    --border-color: #334155;
+    --muted-bg: #1e293b;
+    --footer-bg: #020617;
+    --code-inline-bg: #1e293b;
+    --code-inline-color: #dbeafe;
+    --code-title-color: #93c5fd;
+}
+
+body {
+    transition: background 0.25s ease, color 0.25s ease;
+}
+
 .theme-toggle {
     background-color: #0f3d66;
     color: #c5e6ff;
     font-family: inherit;
     font-size: inherit;
+}
+
+body.dark .theme-toggle {
+    background-color: #2563eb;
+    color: #eff6ff;
 }
 
 .theme-toggle:hover {
