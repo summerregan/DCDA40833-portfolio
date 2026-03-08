@@ -1,41 +1,245 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Austin Hometown Map Placeholder</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      color: #222;
-      display: grid;
-      place-items: center;
-      min-height: 100vh;
-      padding: 24px;
-      box-sizing: border-box;
-    }
-    .card {
-      max-width: 700px;
-      background: #fff;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 24px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    }
-    code {
-      background: #f0f0f0;
-      padding: 2px 6px;
-      border-radius: 4px;
-    }
-  </style>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_822c545230234ec9f858ad4f3b7bb821 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
 </head>
 <body>
-  <div class="card">
-    <h1>Map Not Generated Yet</h1>
-    <p>This file is a placeholder so your Lab 6 page does not return a 404.</p>
-    <p>Generate the real interactive map by running <code>python3 hometown_map.py</code> after setting your Mapbox token and adding <code>hometown_locations.csv</code>.</p>
-  </div>
+    
+    
+            <div class="folium-map" id="map_822c545230234ec9f858ad4f3b7bb821" ></div>
+        
 </body>
+<script>
+    
+    
+            var map_822c545230234ec9f858ad4f3b7bb821 = L.map(
+                "map_822c545230234ec9f858ad4f3b7bb821",
+                {
+                    center: [30.259314, -97.75556566666667],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_4ce68bc5666be59b18855f3aa2c1a7e8 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_4ce68bc5666be59b18855f3aa2c1a7e8.addTo(map_822c545230234ec9f858ad4f3b7bb821);
+        
+    
+            var marker_73c50ddd9443fa2a19217adcecb8924e = L.marker(
+                [30.266962, -97.772859],
+                {
+}
+            ).addTo(map_822c545230234ec9f858ad4f3b7bb821);
+        
+    
+            var icon_686314c6818b828988df48a13be3872d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "tree",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4f86e5435638584b24026f675f88def1 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_92c195bfd4623bd3e98156788ed4ca6d = $(`<div id="html_92c195bfd4623bd3e98156788ed4ca6d" style="width: 100.0%; height: 100.0%;">         <div style="width:260px;">             <h4>Zilker Park</h4>             <p>A favorite Austin green space.</p>                      </div>         </div>`)[0];
+                popup_4f86e5435638584b24026f675f88def1.setContent(html_92c195bfd4623bd3e98156788ed4ca6d);
+            
+        
+
+        marker_73c50ddd9443fa2a19217adcecb8924e.bindPopup(popup_4f86e5435638584b24026f675f88def1)
+        ;
+
+        
+    
+    
+            marker_73c50ddd9443fa2a19217adcecb8924e.bindTooltip(
+                `<div>
+                     Zilker Park
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_73c50ddd9443fa2a19217adcecb8924e.setIcon(icon_686314c6818b828988df48a13be3872d);
+            
+    
+            var marker_b326576840e285927af6bc3a641a2818 = L.marker(
+                [30.250276, -97.749405],
+                {
+}
+            ).addTo(map_822c545230234ec9f858ad4f3b7bb821);
+        
+    
+            var icon_cd06e706b98c89b15c24a0e95d81c46b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_35a7e369458f9dd2bc2755446fad8823 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_ee5d4f9634e216a9d7576a8a1f48d00c = $(`<div id="html_ee5d4f9634e216a9d7576a8a1f48d00c" style="width: 100.0%; height: 100.0%;">         <div style="width:260px;">             <h4>South Congress</h4>             <p>Iconic Austin street with local shops.</p>                      </div>         </div>`)[0];
+                popup_35a7e369458f9dd2bc2755446fad8823.setContent(html_ee5d4f9634e216a9d7576a8a1f48d00c);
+            
+        
+
+        marker_b326576840e285927af6bc3a641a2818.bindPopup(popup_35a7e369458f9dd2bc2755446fad8823)
+        ;
+
+        
+    
+    
+            marker_b326576840e285927af6bc3a641a2818.bindTooltip(
+                `<div>
+                     South Congress
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b326576840e285927af6bc3a641a2818.setIcon(icon_cd06e706b98c89b15c24a0e95d81c46b);
+            
+    
+            var marker_1f60f760884d8635f6fc5127bf6fb87f = L.marker(
+                [30.260704, -97.744433],
+                {
+}
+            ).addTo(map_822c545230234ec9f858ad4f3b7bb821);
+        
+    
+            var icon_e47309ad581e294fc934f4a66782876b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "cadetblue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_77adf6f0d8bbac7bfc58ade3fc0defa8 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_6db176637407e8afc5dfa4701b769780 = $(`<div id="html_6db176637407e8afc5dfa4701b769780" style="width: 100.0%; height: 100.0%;">         <div style="width:260px;">             <h4>Lady Bird Lake</h4>             <p>Popular trail and water recreation area.</p>                      </div>         </div>`)[0];
+                popup_77adf6f0d8bbac7bfc58ade3fc0defa8.setContent(html_6db176637407e8afc5dfa4701b769780);
+            
+        
+
+        marker_1f60f760884d8635f6fc5127bf6fb87f.bindPopup(popup_77adf6f0d8bbac7bfc58ade3fc0defa8)
+        ;
+
+        
+    
+    
+            marker_1f60f760884d8635f6fc5127bf6fb87f.bindTooltip(
+                `<div>
+                     Lady Bird Lake
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1f60f760884d8635f6fc5127bf6fb87f.setIcon(icon_e47309ad581e294fc934f4a66782876b);
+            
+</script>
 </html>
