@@ -3,21 +3,33 @@ import requests
 import folium
 import urllib.parse
 import time
+from pathlib import Path
 
 # ---------------------------
 # MAPBOX SETTINGS
 # ---------------------------
-access_token = "PASTE_YOUR_PK_TOKEN_HERE"
+access_token = "pk.eyJ1Ijoic3VtbWVycmVnYW4iLCJhIjoiY21sdHFucDkyMDM3ZTNkb2lienl4djI2NyJ9.7AuATBxBGdGRcuMb1rjJDA"
 
 # Your custom Mapbox style tiles
 tiles = "https://api.mapbox.com/styles/v1/summerregan/cmm82ywzg000201qo7jeof7uk/tiles/256/{z}/{x}/{y}@2x?access_token=" + access_token
 
-csv_file = "hometown_locations.csv"
-output_file = "austin_hometown_map.html"
+base_dir = Path(__file__).resolve().parent
+csv_candidates = [
+    base_dir / "hometown_locations.csv",
+    base_dir / "js" / "hometown_locations.csv",
+]
+csv_file = next((p for p in csv_candidates if p.exists()), None)
+output_file = base_dir / "austin_hometown_map.html"
 
 # ---------------------------
 # READ CSV
 # ---------------------------
+if access_token == "PASTE_YOUR_PK_TOKEN_HERE":
+    raise ValueError("Add your real Mapbox public token in `access_token` first.")
+
+if csv_file is None:
+    raise FileNotFoundError("Could not find hometown_locations.csv in project root or js/ folder.")
+
 df = pd.read_csv(csv_file)
 
 print("CSV loaded successfully")
@@ -133,5 +145,5 @@ for _, row in df.iterrows():
 # ---------------------------
 # SAVE MAP
 # ---------------------------
-m.save(output_file)
+m.save(str(output_file))
 print(f"Map saved as {output_file}")
