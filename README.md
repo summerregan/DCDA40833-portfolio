@@ -36,7 +36,7 @@ By this point in the semester, your portfolio should contain:
 | **Tufte Critique** | `tufte-critique.html` | Lab 3 | Visualization critique (500+ words) with embedded infographic |
 | **Tableau Visualization** | `tableau-visualization.html` | Lab 4 | Embedded Tableau Public viz with reflection (500+ words) |
 | **[Lab 5 Content]** | TBD | Lab 5 | *Content based on Lab 5 assignment* |
-| **Hometown Map** | `hometown-map.html` | Lab 6 | Interactive Folium map with reflection (300+ words) |
+| **Hometown Map** | `lab6.html` | Lab 6 | Interactive Folium map with reflection (300+ words) |
 
 ---
 
@@ -157,7 +157,7 @@ Update the navigation on **every page** to include links to all your lab pages:
         <li><a href="ai-evaluation.html">AI Evaluation</a></li>
         <li><a href="tufte-critique.html">Tufte Critique</a></li>
         <li><a href="tableau-visualization.html">Tableau Viz</a></li>
-        <li><a href="hometown-map.html">Hometown Map</a></li>
+        <li><a href="lab6.html">Hometown Map</a></li>
     </ul>
 </nav>
 ```

@@ -56,7 +56,7 @@ This guide focuses on the practical, day-to-day workflow of editing your Skills 
 | **tufte-critique.html** | Lab 3 content | ✅ Create and edit for Lab 3 |
 | **tableau-visualization.html** | Lab 4 content | ✅ Create and edit for Lab 4 |
 | **lab5.html** | Lab 5 content | ✅ Create and edit for Lab 5 |
-| **hometown-map.html** | Lab 6 content | ✅ Create and edit for Lab 6 |
+| **lab6.html** | Lab 6 content | ✅ Create and edit for Lab 6 |
 | **css/styles.css** | Visual styling (colors, fonts, layout) | ❌ Only if changing colors |
 | **images/** folder | Storage for your images and screenshots | ✅ Add your files here |
 | **README.md** | Documentation | ❌ No |
@@ -286,7 +286,7 @@ Copy this starter template into your new file:
             <li><a href="tufte-critique.html">Tufte Critique</a></li>
             <li><a href="tableau-visualization.html">Tableau Viz</a></li>
             <li><a href="lab5.html">Lab 5</a></li>
-            <li><a href="hometown-map.html">Hometown Map</a></li>
+            <li><a href="lab6.html">Hometown Map</a></li>
         </ul>
     </nav>
 
