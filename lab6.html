@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- basic page setup -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Lab 6 Austin hometown interactive map project">
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <!-- main site nav -->
     <nav class="site-nav">
         <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-menu">
             <span class="sr-only">Toggle navigation</span>
@@ -28,9 +30,11 @@
     </nav>
 
     <main>
+        <!-- short intro for the project -->
         <h1>Lab 6: Austin Hometown Interactive Map</h1>
         <p>This project combines a custom Mapbox basemap, a CSV dataset of meaningful Austin locations, and a Python-generated interactive map.</p>
 
+        <!-- iframe that loads my generated folium map -->
         <h2>Interactive Map</h2>
         <iframe
             src="./austin_hometown_map.html?v=20260308"
@@ -40,6 +44,7 @@
             title="Austin Hometown Interactive Map">
         </iframe>
 
+        <!-- reflection write-up for the lab -->
         <h2>Reflection</h2>
         <p>
             For my basemap design, I took inspiration from the colorful and creative vibe that Austin is known for, especially the look of Austin concert posters and the overall artsy feel of the city. I wanted the map to feel a little more stylized than a normal map while still being easy to read. I used warmer land colors and darker water tones so there would be clear contrast between different elements on the map. I also adjusted the roads and labels so they stood out but did not overpower everything else. My goal was to make something that visually matched the personality of Austin while still functioning like a real map people could use.
@@ -55,6 +60,7 @@
         </p>
     </main>
 
+    <!-- scripts for theme + mobile menu -->
     <script src="js/theme.js"></script>
     <script src="js/nav.js"></script>
 </body>
