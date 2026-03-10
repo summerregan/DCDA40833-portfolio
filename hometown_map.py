@@ -1,3 +1,4 @@
+import os
 import pandas as pd
 import requests
 import folium
@@ -8,7 +9,7 @@ from pathlib import Path
 # ---------------------------
 # MAPBOX SETTINGS
 # ---------------------------
-access_token = "pk.eyJ1Ijoic3VtbWVycmVnYW4iLCJhIjoiY21sdHFucDkyMDM3ZTNkb2lienl4djI2NyJ9.7AuATBxBGdGRcuMb1rjJDA"
+access_token = os.getenv("MAPBOX_TOKEN", "").strip()
 
 # Your custom Mapbox style tiles
 tiles = "https://api.mapbox.com/styles/v1/summerregan/cmm82ywzg000201qo7jeof7uk/tiles/256/{z}/{x}/{y}@2x?access_token=" + access_token
@@ -24,8 +25,8 @@ output_file = base_dir / "austin_hometown_map.html"
 # ---------------------------
 # READ CSV
 # ---------------------------
-if access_token == "PASTE_YOUR_PK_TOKEN_HERE":
-    raise ValueError("Add your real Mapbox public token in `access_token` first.")
+if not access_token:
+    raise ValueError("Set MAPBOX_TOKEN in your environment before running this script.")
 
 if csv_file is None:
     raise FileNotFoundError("Could not find hometown_locations.csv in project root or js/ folder.")
@@ -126,12 +127,17 @@ def style_by_type(place_type):
 # ---------------------------
 for _, row in df.iterrows():
     color, icon_name = style_by_type(row["Type"])
+    image_url = str(row.get("Image_URL", "")).strip()
+    if image_url.startswith("https://example.com/"):
+        image_url = ""
+
+    image_html = f'<img src="{image_url}" width="220">' if image_url else ""
 
     popup_html = f"""
     <div style="width:260px;">
         <h4>{row['Name']}</h4>
         <p>{row['Description']}</p>
-        <img src="{row['Image_URL']}" width="220">
+        {image_html}
     </div>
     """
 
