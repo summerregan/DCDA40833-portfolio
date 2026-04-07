@@ -1,0 +1,685 @@
+@import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Brown+Sugar&display=swap');
+
+/* =========================
+   DCDA 40833 Skills Portfolio Template
+   CSS Stylesheet for Student Portfolios
+   ========================= */
+
+/* =========================
+   CSS Variables (Color Scheme)
+   ========================= */
+:root {
+    --primary-color: #c5e6ff;      /* requested primary */
+    --secondary-color: #e8f4ff;    /* pale blue */
+    --accent-color: #8ec5f5;       /* medium accent blue */
+    --heading-color: #0f3d66;      /* dark blue headings */
+    --bg-color: #f7fbff;           /* page background */
+    --highlight-color: #dff1ff;    /* hover/highlight */
+    --soft-accent: #edf7ff;        /* soft accent */
+    --nav-color: #c5e6ff;          /* navigation */
+    --text-color: #000000;         /* black body text */
+    --text-secondary: #1f2937;     /* dark neutral secondary text */
+    --surface-color: #ffffff;      /* card/section background */
+    --border-color: #cfe6fb;       /* borders and dividers */
+    --muted-bg: #f3f9ff;           /* subtle alternating background */
+    --footer-bg: #111827;          /* near-black footer */
+    --footer-text: #c5e6ff;        /* footer text/link color */
+    --code-inline-bg: #edf6ff;     /* inline code background */
+    --code-inline-color: #0f3d66;  /* inline code text */
+    --code-title-color: #c5e6ff;   /* code title accent */
+    --white: #ffffff;
+}
+
+/* =========================
+   Basic Reset & Typography
+   ========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;       /* Smooth scrolling for anchor links */
+}
+
+body {
+    font-family: 'Abhaya Libre', Georgia, 'Times New Roman', serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background: linear-gradient(180deg, var(--bg-color), var(--secondary-color));
+}
+
+/* =========================
+   Header & Navigation
+   ========================= */
+/* Style semantic tags directly - no classes needed! */
+header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--text-color);
+    padding: 2rem 0;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(17, 24, 39, 0.1);
+}
+
+header h1 {
+    color: var(--text-color);
+    margin: 0 0 0.5rem 0;
+    font-size: 2rem;
+}
+
+header p {
+    color: var(--text-color);
+    margin: 0;
+    opacity: 0.9;
+    font-size: 1.1rem;
+}
+
+nav {
+    background-color: var(--nav-color);
+    padding: 0.75rem;
+    display: flex;              /* Make nav a flex container */
+    justify-content: center;    /* Center the ul inside nav */
+    position: sticky;           /* Stick to top when scrolling */
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 6px 18px rgba(17, 24, 39, 0.1);
+}
+
+/* Style the navigation list */
+nav ul {
+    list-style: none;           /* Remove bullets */
+    padding: 0;                 /* Remove default padding */
+    margin: 0;                  /* Remove default margin */
+    display: flex;              /* Arrange items horizontally */
+    flex-direction: row;        /* Explicit: horizontal on desktop */
+    justify-content: center;    /* Center the items */
+    gap: 1rem;                  /* Space between items */
+    flex-wrap: wrap;            /* Wrap on small screens */
+}
+
+nav li {
+    list-style: none;           /* Extra insurance - remove bullets */
+}
+
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 999px;
+}
+
+nav a:hover {
+    background-color: var(--highlight-color);
+    color: var(--text-color);
+}
+
+/* Hamburger Menu Styles */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.nav-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-color);
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: var(--surface-color);
+        flex-direction: column;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+    }
+
+    .nav-menu.active {
+        max-height: 500px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-menu li {
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .nav-menu a {
+        display: block;
+        padding: 1rem;
+    }
+
+    /* Hamburger animation */
+    .nav-toggle[aria-expanded="true"] span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .nav-toggle[aria-expanded="true"] span:nth-child(1) {
+        transform: rotate(45deg) translate(8px, 8px);
+    }
+
+    .nav-toggle[aria-expanded="true"] span:nth-child(3) {
+        transform: rotate(-45deg) translate(8px, -8px);
+    }
+}
+
+/* Desktop Navigation */
+@media (min-width: 769px) {
+    .nav-menu {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .nav-menu li {
+        margin: 0 1rem;
+    }
+}
+
+/* =========================
+   Main Content
+   ========================= */
+/* Style main semantic tag directly */
+main {
+    max-width: 900px;          /* Don't get too wide */
+    margin: 2rem auto;         /* Center horizontally */
+    padding: 0 1rem;           /* Space on sides for mobile */
+}
+
+/* All sections inside main get consistent styling */
+main section {
+    background-color: var(--surface-color);
+    padding: 2rem;
+    margin-bottom: 2rem;       /* Space between sections */
+    border: 1px solid var(--border-color);
+    border-radius: 14px;       /* Rounded corners */
+    box-shadow: 0 12px 32px rgba(17, 24, 39, 0.08);
+}
+
+/* Style h2 headings inside sections */
+main section h2 {
+    color: var(--heading-color);
+    border-bottom: 3px solid var(--soft-accent);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.875rem;
+}
+
+main section h3 {
+    color: var(--heading-color);
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.5rem;
+}
+
+/* Paragraphs inside sections */
+main section p {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+
+/* Lists inside sections */
+main section ul,
+main section ol {
+    margin: 1rem 0 1rem 2rem;
+    line-height: 1.8;
+}
+
+main section li {
+    margin-bottom: 0.5rem;
+}
+
+/* Consistent framed style for portfolio images */
+main img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0.75rem auto;
+    padding: 0.35rem;
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: 0 10px 22px rgba(17, 24, 39, 0.1);
+}
+
+figure {
+    margin: 1.5rem auto;
+    text-align: center;
+}
+
+/* =========================
+   Data Visualizations
+   ========================= */
+/* Container for charts and images */
+.viz-container {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.viz-container img {
+    max-width: 100%;           /* Responsive: never wider than container */
+    height: auto;              /* Maintain aspect ratio */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0.5rem;
+}
+
+/* Figure captions */
+.viz-container figcaption {
+    font-style: italic;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+/* Grid layout for multiple visualizations */
+.viz-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+/* =========================
+   Code Blocks
+   ========================= */
+/* Improve pre/code styling for Python code */
+pre {
+    background: #2d2d2d;          /* Dark background */
+    color: #f8f8f2;               /* Light text */
+    border: none;
+    border-radius: 8px;
+    padding: 1.5rem;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+code {
+    font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+}
+
+/* Inline code (inside paragraphs) */
+p code, li code {
+    background: var(--code-inline-bg);
+    color: var(--code-inline-color);
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+
+/* Code block titles */
+.code-title {
+    background: #1e1e1e;
+    color: var(--code-title-color);
+    padding: 0.5rem 1rem;
+    border-radius: 8px 8px 0 0;
+    font-family: monospace;
+    font-size: 0.85rem;
+    margin-bottom: -0.5rem;
+}
+
+.code-title + pre {
+    border-radius: 0 0 8px 8px;
+    margin-top: 0;
+}
+
+/* =========================
+   Data Tables
+   ========================= */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    background: var(--surface-color);
+}
+
+th, td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border: 1px solid var(--border-color);
+}
+
+th {
+    background: var(--heading-color);
+    color: var(--white);
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background: var(--muted-bg);
+}
+
+.results-table {
+    font-size: 0.95rem;
+    margin: 1.5rem auto;
+    max-width: 700px;
+}
+
+.results-table td {
+    text-align: center;
+}
+
+.results-table td:first-child {
+    text-align: left;
+    font-weight: 500;
+}
+
+/* Highlight key rows */
+.results-table tr.highlight {
+    background: var(--accent-color);
+    font-weight: bold;
+}
+
+/* =========================
+   Framework Connections
+   ========================= */
+.framework-callout {
+    background: linear-gradient(135deg, var(--soft-accent), var(--accent-color));
+    border-left: 5px solid var(--secondary-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+}
+
+.framework-callout h3 {
+    color: var(--heading-color);
+    margin-top: 0;
+}
+
+.framework-callout strong {
+    color: var(--heading-color);
+}
+
+/* =========================
+   Portfolio Cards
+   ========================= */
+/* Grid layout for portfolio cards on home page */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+/* Individual portfolio card styling */
+.portfolio-card {
+    display: block;
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.portfolio-card:hover {
+    border-color: var(--accent-color);
+    background: linear-gradient(180deg, var(--surface-color), var(--soft-accent));
+    box-shadow: 0 14px 28px rgba(17, 24, 39, 0.1);
+    transform: translateY(-3px);
+}
+
+.portfolio-card h3 {
+    color: var(--heading-color);
+    margin: 0 0 0.5rem 0;
+    font-size: 1.25rem;
+}
+
+.portfolio-card p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin: 0.75rem 0 0 0;
+    line-height: 1.5;
+}
+
+/* Lab tag badge on portfolio cards */
+.lab-tag {
+    display: inline-block;
+    background: var(--heading-color);
+    color: var(--white);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* =========================
+   Footer (semantic tag)
+   ========================= */
+footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+footer a {
+    color: var(--footer-text);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+   Responsive Design (Mobile)
+   ========================= */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5rem;     /* Smaller on mobile */
+    }
+
+    nav {
+        font-size: 0.9rem;
+    }
+
+    /* Stack navigation vertically on mobile */
+    nav ul {
+        flex-direction: column;  /* Change from row to column */
+        align-items: center;     /* Center the stacked items */
+    }
+
+    nav a {
+        display: block;          /* Full width for easier tapping */
+        width: 100%;
+        text-align: center;
+    }
+
+    main section {
+        padding: 1rem;         /* Less padding on mobile */
+    }
+
+    .viz-grid {
+        grid-template-columns: 1fr;  /* Single column on mobile */
+    }
+}
+
+/* =========================
+   Print Styles (Optional)
+   ========================= */
+@media print {
+    nav {
+        display: none;
+    }
+
+    main section {
+        box-shadow: none;
+        page-break-inside: avoid;
+    }
+}
+
+/* =========================
+   Mobile Hamburger Navigation (Home)
+   ========================= */
+.site-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.site-nav .nav-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 1rem;
+}
+
+.site-nav .nav-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem;
+}
+
+.site-nav .nav-toggle span {
+    display: block;
+    width: 24px;
+    height: 3px;
+    background: var(--text-color);
+    margin: 5px 0;
+    border-radius: 2px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+@media (max-width: 768px) {
+    .site-nav {
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .site-nav .nav-toggle {
+        display: block;
+    }
+
+    .site-nav .nav-menu {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.5rem;
+        margin-top: 0.75rem;
+        background-color: var(--nav-color);
+        padding: 0.5rem;
+        border-radius: 8px;
+    }
+
+    .site-nav .nav-menu a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        background-color: var(--nav-color);
+    }
+
+    .site-nav.is-open {
+        flex-wrap: wrap;
+    }
+
+    .site-nav.is-open .nav-menu {
+        display: flex;
+    }
+
+    .site-nav.is-open .nav-toggle span:nth-child(2) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .site-nav.is-open .nav-toggle span:nth-child(3) {
+        opacity: 0;
+    }
+
+    .site-nav.is-open .nav-toggle span:nth-child(4) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+/* =========================
+   Dark Mode Toggle Button
+   ========================= */
+/* Applied when the Vibe Coding toggle is active */
+body.dark {
+    --primary-color: #1b2636;
+    --secondary-color: #111827;
+    --accent-color: #3b82f6;
+    --heading-color: #dbeafe;
+    --bg-color: #0b1220;
+    --highlight-color: #243447;
+    --soft-accent: #1f2a3c;
+    --nav-color: #111827;
+    --text-color: #e5e7eb;
+    --text-secondary: #cbd5e1;
+    --surface-color: #162132;
+    --border-color: #334155;
+    --muted-bg: #1e293b;
+    --footer-bg: #020617;
+    --footer-text: #cbd5e1;
+    --code-inline-bg: #1e293b;
+    --code-inline-color: #dbeafe;
+    --code-title-color: #93c5fd;
+}
+
+body {
+    transition: background 0.25s ease, color 0.25s ease;
+}
+
+.theme-toggle {
+    background-color: #0f3d66;
+    color: #c5e6ff;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    margin-left: 0.75rem;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.1s ease;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+body.dark .theme-toggle {
+    background-color: #2563eb;
+    color: #eff6ff;
+}
+
+.theme-toggle:hover {
+    background-color: #00004d;  /* Darker navy on hover */
+    color: #b0e0e6;             /* Slightly brighter light blue on hover */
+}
+
+.theme-toggle:active {
+    transform: scale(0.98);
+}

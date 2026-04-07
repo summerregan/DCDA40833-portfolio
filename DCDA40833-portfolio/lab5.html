@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 5 | Summer Regan</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav class="site-nav">
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-menu">
+                <span class="sr-only">Toggle navigation</span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul id="primary-menu" class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="ai-evaluation.html">AI Evaluation</a></li>
+                <li><a href="lab03.html">Viz Critique</a></li>
+                <li><a href="tableau-visualization.html">Tableau Viz</a></li>
+                <li><a href="lab5.html" class="active">Vibe Coding</a></li>
+                <li><a href="lab6.html">Hometown Map</a></li>
+            </ul>
+            <button id="themeToggle" class="theme-toggle" type="button">
+                Dark Mode
+            </button>
+        </nav>
+        <h1>AI-Assisted Development</h1>
+        <p>
+            For this lab, I completed Experiment A (Portfolio Enhancement) and 
+            Experiment C (Debugging with AI). The goal was not just to generate code 
+            with AI, but to demonstrate that I can read, explain, and modify what it produces.
+        </p>
+    </header>
+
+    <main>
+        <!-- experiment A section -->
+        <section class="card">
+            <h2>Experiment A: Portfolio Enhancement</h2>
+            <h3>Feature: Dark Mode Toggle</h3>
+
+            <p>
+                I added a dark mode toggle to my navigation bar. When clicked, the site switches 
+                between light and dark themes. I used AI to generate an initial version of the feature, 
+                then reviewed it line-by-line and adjusted both the structure and styling so it matched 
+                the layout of my portfolio.
+            </p>
+
+            <h4>How it works</h4>
+            <ul>
+                <li>
+                    JavaScript adds or removes a <code>dark</code> class on the 
+                    <code>&lt;body&gt;</code>.
+                </li>
+                <li>
+                    My CSS uses variables (such as <code>--bg</code> and <code>--text</code>) 
+                    so that when the <code>dark</code> class is active, those values change.
+                </li>
+                <li>
+                    The selected theme is saved using <code>localStorage</code>, so it persists 
+                    across refreshes and page navigation.
+                </li>
+            </ul>
+
+            <figure>
+                <img src="images/dark-mode-button.png" alt="Dark mode toggle button in the navigation bar">
+                <figcaption>The dark mode toggle button in the nav</figcaption>
+            </figure>
+
+            <h4>Key Code Snippet (with Explanation)</h4>
+
+            <pre><code>
+/* When the body has the "dark" class,
+   these variables override the default theme values.
+   This is what visually changes the site colors. */
+body.dark {
+  --bg: #0f1115;
+  --text: #f3f4f6;
+}
+
+/* This toggles the "dark" class on the body element.
+   The CSS above responds to that class, so this line
+   is what actually switches the theme on and off. */
+document.body.classList.toggle("dark");
+
+/* This stores the user's theme preference so the
+   mode stays consistent after refresh or navigation. */
+localStorage.setItem("site-theme", isDark ? "dark" : "light");
+            </code></pre>
+
+            <figure>
+                <img src="images/dark-mode-on.png" alt="Dark mode toggle button activated in the navigation bar">
+                <figcaption>Dark mode toggle button in action</figcaption>
+            </figure>
+
+            <h4>Modifications I Made</h4>
+            <ul>
+                <li>I adjusted the button styling so it aligned with my existing navigation design.</li>
+                <li>I ensured the theme persisted across pages using <code>localStorage</code>.</li>
+                <li>I added safeguards so the script does not break if the button is missing on a page.</li>
+            </ul>
+
+           
+        </section>
+
+        <!-- experiment C section -->
+        <section class="card">
+            <h2>Experiment C: Debugging with AI</h2>
+
+            <p>
+                During development, my page would not open correctly when previewing in VS Code. 
+                Instead of immediately rewriting code, I treated this as a debugging experiment.
+            </p>
+
+            <h3>What Was Happening</h3>
+            <p>
+                When attempting to preview the file, the browser either showed a blank page 
+                or failed to load properly. This occurred after I added the new JavaScript file 
+                for dark mode.
+            </p>
+
+            <h3>My Initial Hypothesis</h3>
+            <p>
+                Since the issue appeared after adding new functionality, I assumed the problem 
+                was related to how I linked the JavaScript file. I suspected the file path might 
+                not match my folder structure.
+            </p>
+
+            <h3>What AI Helped Me Verify</h3>
+            <p>
+                AI recommended checking the script tag path, confirming the file existed in the 
+                correct directory, and reviewing the browser console for errors. It also reminded 
+                me that file and folder names must match exactly, including capitalization.
+            </p>
+
+            <h3>The Fix</h3>
+
+            <p>
+                I had the script linked with the wrong path, so the page failed to load correctly in preview.
+                I fixed it by pointing to the correct file and keeping the script at the end of the body.
+            </p>
+
+            <pre><code>
+&lt;!-- Wrong --&gt;
+&lt;script src="theme.js"&gt;&lt;/script&gt;
+
+&lt;!-- Correct --&gt;
+&lt;script src="js/theme.js"&gt;&lt;/script&gt;
+            </code></pre>
+
+            <h3>What I Learned</h3>
+            <ul>
+                <li>Small file path mismatches can prevent a page from loading entirely.</li>
+                <li>Preview errors are often structural (linking issues), not logical issues.</li>
+                <li>Checking the console before rewriting code is more efficient.</li>
+            </ul>
+
+    
+        </section>
+
+        <!-- my personal rules for using AI -->
+        <section class="card">
+            <h2>My Guidelines for Using AI in Coding</h2>
+            <ul>
+                <li>I do not submit code that I cannot explain.</li>
+                <li>I review AI-generated code line-by-line before implementing it.</li>
+                <li>I test every change in the browser before committing.</li>
+                <li>I treat AI as a collaborator, not a replacement for understanding.</li>
+                <li>If I encounter something unfamiliar, I research it before keeping it.</li>
+            </ul>
+        </section>
+
+        <!-- exact prompts i used -->
+        <section class="card">
+            <h2>AI Prompts</h2>
+
+            <h3>Experiment A Prompt</h3>
+            <pre><code>
+Add a dark mode toggle to my HTML/CSS portfolio site.
+I want a button in the nav that toggles dark mode,
+and the setting should persist across pages.
+            </code></pre>
+
+            <h3>Experiment C Prompt</h3>
+            <pre><code>
+My page will not open when previewing in VS Code after
+adding a JavaScript file. Can you help me identify
+possible linking or file path errors?
+            </code></pre>
+
+            <p>
+                AI provided initial direction, but I tested, adjusted,
+                and confirmed the final implementation myself.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Summer Regan</p>
+    </footer>
+    <script src="js/theme.js"></script>
+    <script src="js/nav.js"></script>
+</body>
+</html>

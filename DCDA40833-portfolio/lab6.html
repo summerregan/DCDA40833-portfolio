@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- basic page setup -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lab 6 Austin hometown interactive map project">
+    <meta name="author" content="Summer Regan">
+    <title>Lab 6 | Austin Hometown Interactive Map</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- main site nav -->
+    <nav class="site-nav">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-menu">
+            <span class="sr-only">Toggle navigation</span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul id="primary-menu" class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="ai-evaluation.html">AI Evaluation</a></li>
+            <li><a href="lab03.html">Viz Critique</a></li>
+            <li><a href="tableau-visualization.html">Tableau Viz</a></li>
+            <li><a href="lab5.html">Vibe Coding</a></li>
+            <li><a href="lab6.html" aria-current="page">Hometown Map</a></li>
+        </ul>
+        <button id="themeToggle" class="theme-toggle" type="button">Dark Mode</button>
+    </nav>
+
+    <main>
+        <!-- short intro for the project -->
+        <h1>Lab 6: Austin Hometown Interactive Map</h1>
+        <p>This project combines a custom Mapbox basemap, a CSV dataset of meaningful Austin locations, and a Python-generated interactive map.</p>
+
+        <!-- iframe that loads my generated folium map -->
+        <h2>Interactive Map</h2>
+        <iframe
+            src="./austin_hometown_map.html?v=20260308"
+            width="100%"
+            height="650"
+            style="border:none;"
+            title="Austin Hometown Interactive Map">
+        </iframe>
+
+        <!-- reflection write-up for the lab -->
+        <h2>Reflection</h2>
+        <p>
+            For my basemap design, I took inspiration from the colorful and creative vibe that Austin is known for, especially the look of Austin concert posters and the overall artsy feel of the city. I wanted the map to feel a little more stylized than a normal map while still being easy to read. I used warmer land colors and darker water tones so there would be clear contrast between different elements on the map. I also adjusted the roads and labels so they stood out but did not overpower everything else. My goal was to make something that visually matched the personality of Austin while still functioning like a real map people could use.
+        </p>
+        <p>
+            One of the biggest challenges while designing the basemap was figuring out how to make it work at different zoom levels. When I zoomed out, there were too many labels and features showing up, which made the map look really cluttered. I had to experiment with the style across zoom range settings in Mapbox so that certain things only appeared when the user zoomed in. For example, I made sure smaller roads and extra labels only appear when you are closer to the city. This helped keep the map readable whether someone is looking at the whole region or zooming into specific neighborhoods.
+        </p>
+        <p>
+            The coding part of the project involved using Python to turn my list of meaningful Austin locations into an interactive map. My script reads the CSV file that contains all the places I chose, sends the addresses to the Mapbox Geocoding API, and gets the latitude and longitude for each location. Then it uses Folium to place markers on the map using my custom Mapbox basemap. I also set up different marker colors depending on the type of location, like parks, restaurants, or recreation spots. Each marker has a popup that shows the place name, my description, and an image. I used AI to help me get the structure of the code started, but I worked through the sections to understand what they were doing so I could make changes if something was not working.
+        </p>
+        <p>
+            Overall, this project helped me see how design, data, and coding all connect when building an interactive map. It was interesting to combine a basemap that I designed in Mapbox with a dataset of places that are personally meaningful to me in Austin.
+        </p>
+    </main>
+
+    <!-- scripts for theme + mobile menu -->
+    <script src="js/theme.js"></script>
+    <script src="js/nav.js"></script>
+</body>
+</html>
